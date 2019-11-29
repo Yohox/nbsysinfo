@@ -1,8 +1,10 @@
+from glob import glob
+
 import setuptools
 
 setuptools.setup(
     name="nbsysinfo",
-    version='0.1.0',
+    version='0.1.4',
     url="https://github.com/Yohox/nbsysinfo",
     author="yoho",
     description="Add SysInfo to your jupyter notebook.",
@@ -12,6 +14,7 @@ setuptools.setup(
         'notebook'
     ],
     data_files=[
+        ('share/jupyter/nbextensions/nbsysinfo', glob('nbsysinfo/static/*')),
         ('etc/jupyter/jupyter_notebook_config.d', ['nbsysinfo/etc/server_sysinfo.json']),
         ('etc/jupyter/nbconfig/notebook.d', ['nbsysinfo/etc/nbext_sysinfo.json'])
     ],
